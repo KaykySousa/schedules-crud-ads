@@ -20,5 +20,8 @@ app.use(scheduleRouter)
 app.use(errorHandler)
 
 app.use("*", (req, res) => {
-	res.render("error")
+	res.render("error", {
+		status: 404,
+		message: "Not found",
+	})
 })
